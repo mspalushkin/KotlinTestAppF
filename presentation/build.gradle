@@ -1,0 +1,139 @@
+import com.palushkin.kotlintestapp.buildsrc.Libs
+
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
+}
+
+android {
+    compileSdkVersion 30
+    //buildToolsVersion '30.0.3'
+
+    defaultConfig {
+        applicationId 'com.palushkin.kotlintestapp'
+        minSdkVersion 17
+        targetSdkVersion 30
+        versionCode 1
+        versionName '1.0'
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+    }
+
+    buildTypes {
+        release {
+            debuggable false
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+            minifyEnabled false
+            shrinkResources false
+            applicationIdSuffix '.debug'
+        }
+    }
+    buildFeatures {
+        dataBinding true
+        //viewBinding true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation project(":domain")
+    implementation project(":data")
+
+    // Dependency on a local library module
+    // implementation project(":mylibrary")
+    // Dependency on local binaries
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    implementation Libs.Kotlin.stdlib
+    implementation Libs.AndroidX.coreKtx
+    implementation Libs.AndroidX.appcompat
+    implementation Libs.AndroidX.constraintlayout
+    implementation Libs.material
+    implementation Libs.vectorDrawable
+    implementation Libs.AndroidX.legacySupport
+    implementation Libs.AndroidX.multidex
+    implementation Libs.playServicesAuth
+    implementation Libs.AndroidX.recyclerview
+
+    // Saved state module for ViewModel
+    implementation Libs.AndroidX.Lifecycle.savedStateModule
+
+    implementation Libs.AndroidX.Lifecycle.viewmodel
+
+    // Navigation
+    implementation Libs.AndroidX.Navigation.fragmentKtx
+    implementation Libs.AndroidX.Navigation.navigationUiKtx
+    implementation Libs.AndroidX.Navigation.navigationDynamicFeaturesFragment
+
+    // Room and Lifecycle dependencies
+    implementation Libs.AndroidX.Room.runtime
+    kapt Libs.AndroidX.Room.compiler
+    implementation Libs.AndroidX.Lifecycle.extensions
+
+    // RxJava/
+    implementation Libs.RxJava.rxAndroid
+    implementation Libs.RxJava.rxJava
+
+    // ReactiveStreams support for LiveData
+    implementation Libs.AndroidX.Lifecycle.reactivestreamsKtx
+    implementation Libs.AndroidX.Lifecycle.livedata
+
+    // Coroutines
+    implementation Libs.Coroutines.core
+    implementation Libs.Coroutines.android
+
+    // Retrofit with Moshi Converter
+    implementation Libs.Retrofit.converterMoshi
+    implementation Libs.Retrofit.kotlinCoroutinesAdapter
+    kapt Libs.Retrofit.moshiKotlinCodegen
+    // Moshi
+    implementation Libs.Retrofit.moshi
+    implementation Libs.Retrofit.moshiKotlin
+    //OkHttp
+    implementation ('com.squareup.okhttp3:okhttp'){
+        version {
+            strictly '3.12.12' //API19 support
+        }
+    }
+
+    // Retrofit & Gson
+    implementation Libs.Retrofit.retrofit
+    implementation Libs.gson
+
+    // Glide
+    implementation Libs.glide
+    implementation Libs.AndroidX.swiperefreshlayout
+
+    // WorkManager
+    // Kotlin + coroutines
+    //implementation Libs.AndroidX.workRuntimeKtx
+
+    // Dagger 2
+    implementation Libs.Dagger2.dagger
+    kapt Libs.Dagger2.compiler
+
+    // Testing
+    testImplementation Libs.Tests.junit
+    androidTestImplementation Libs.Tests.extJunit
+    androidTestImplementation Libs.Tests.espressoCore
+
+    // LeakCanary
+    debugImplementation Libs.leakcanary
+}

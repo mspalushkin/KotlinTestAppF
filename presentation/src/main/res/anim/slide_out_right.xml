@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ 02.06.2021
+  ~ @author Maksim Palushkin
+  -->
+
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <alpha
+        android:duration="150"
+        android:fromAlpha="1.0"
+        android:toAlpha="0.0" />
+
+    <translate
+        android:duration="150"
+        android:fromXDelta="0%"
+        android:toXDelta="10%"
+        android:fromYDelta="0%"
+        android:toYDelta="0%" />
+
+</set>

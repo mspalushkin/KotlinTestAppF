@@ -1,0 +1,81 @@
+import com.palushkin.kotlintestapp.buildsrc.Libs
+
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+}
+
+android {
+    compileSdkVersion 30
+
+    defaultConfig {
+        minSdkVersion 17
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation project(":domain")
+
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    implementation Libs.Kotlin.stdlib
+    implementation Libs.AndroidX.coreKtx
+    implementation Libs.AndroidX.legacySupport
+
+    // Room and Lifecycle dependencies
+    implementation Libs.AndroidX.Room.runtime
+    kapt Libs.AndroidX.Room.compiler
+    implementation Libs.AndroidX.Lifecycle.extensions
+    implementation Libs.AndroidX.Room.ktx
+    //implementation "androidx.room:room-rxjava2:2.2.6"
+
+    // Coroutines
+    implementation Libs.Coroutines.core
+    implementation Libs.Coroutines.android
+
+    // Retrofit with Moshi Converter
+    implementation Libs.Retrofit.converterMoshi
+    implementation Libs.Retrofit.kotlinCoroutinesAdapter
+    kapt Libs.Retrofit.moshiKotlinCodegen
+    // Moshi
+    implementation Libs.Retrofit.moshi
+    implementation Libs.Retrofit.moshiKotlin
+    //OkHttp
+    implementation ('com.squareup.okhttp3:okhttp'){
+        version {
+            strictly '3.12.12' //API19 support
+        }
+    }
+
+    // Dagger 2
+    implementation Libs.Dagger2.dagger
+    kapt Libs.Dagger2.compiler
+
+    // Testing
+    testImplementation Libs.Tests.junit
+    androidTestImplementation Libs.Tests.extJunit
+    androidTestImplementation Libs.Tests.espressoCore
+}

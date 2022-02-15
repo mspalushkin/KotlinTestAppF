@@ -1,0 +1,27 @@
+import com.palushkin.kotlintestapp.buildsrc.Libs
+
+plugins {
+    id 'java-library'
+    id 'kotlin'
+}
+
+
+dependencies {
+
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    implementation Libs.Kotlin.stdlib
+    implementation Libs.AndroidX.coreKtx
+
+    // Coroutines
+    implementation Libs.Coroutines.core
+    implementation Libs.Coroutines.android
+
+    // Testing
+    testImplementation Libs.Tests.junit
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}

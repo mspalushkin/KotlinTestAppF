@@ -1,0 +1,27 @@
+
+<!--
+  ~ 02.06.2021
+  ~ @author Maksim Palushkin
+  -->
+
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.KotlinTestApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+    <!--<item name="theme">@style/ThemeOverlay.MaterialComponents.Dark.ActionBar</item>-->
+    <style name="Toolbar" >
+        <!--#E8E8E8-->
+        <item name="android:background">#9C0404</item>
+    </style>
+</resources>

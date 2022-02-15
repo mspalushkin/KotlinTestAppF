@@ -1,0 +1,20 @@
+
+<!--
+  ~ 02.06.2021
+  ~ @author Maksim Palushkin
+  -->
+
+<resources>
+    <string name="app_name">Kotlin Test App</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="person">%1$s %2$s</string>
+    <string name="person_pic">person pic</string>
+    <string name="dummy_message">Neutral text</string>
+    <string name="first_and_last_name">First and last name</string>
+    <string name="email">email</string>
+    <string name="download_status">download status</string>
+    <string name="detail">Detail</string>
+    <string name="person_list">person list</string>
+</resources>

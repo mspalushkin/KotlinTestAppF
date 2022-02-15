@@ -1,0 +1,5 @@
+
+include ':presentation'
+rootProject.name = "Kotlin Test App"
+include ':data'
+include ':domain'

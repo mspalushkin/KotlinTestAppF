@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ 13.06.2021
+  ~ @author Maksim Palushkin
+  -->
+
+<resources>
+    <string name="app_name">Kotlin Test App</string>
+    <string name="title_home">Домой</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Уведомления</string>
+    <string name="person">%1$s %2$s</string>
+    <string name="person_pic">личная фотография</string>
+    <string name="dummy_message">Нейтральный текст</string>
+    <string name="first_and_last_name">Имя Фамилия</string>
+    <string name="email">email</string>
+    <string name="download_status">статус загрузки</string>
+    <string name="detail">Подробности</string>
+    <string name="person_list">список лиц</string>
+</resources>
