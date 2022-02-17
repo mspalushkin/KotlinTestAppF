@@ -5,16 +5,12 @@
 
 package com.palushkin.kotlintestapp.ui.home
 
-import android.util.Log
 import androidx.lifecycle.*
-import com.palushkin.kotlintestapp.common.DomainUser
-import com.palushkin.kotlintestapp.common.asMVModel
 import com.palushkin.data.database.repository.Repository
 import com.palushkin.domain.service.ProjectListUseCases
+import com.palushkin.kotlintestapp.common.DomainUser
+import com.palushkin.kotlintestapp.common.asMVModel
 import com.palushkin.kotlintestapp.common.deepCopy
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import javax.inject.Inject

@@ -53,9 +53,7 @@ class App : MultiDexApplication() {
         dataRefreshed = true
     }
 
-    fun checkDataRefresh(): Boolean {
-        return dataRefreshed
-    }
+    fun checkDataRefresh() = dataRefreshed
 
     override fun onCreate() {
 
